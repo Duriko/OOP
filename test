@@ -1,5 +1,29 @@
-test
-
-
-
-test
+    private void removeDeltagare() {
+        while (true) {
+            System.out.println("Number: ");
+            checkParticipant();
+            int removeNum = input.nextInt();
+            if (removeNum-100 <= deltagare.length) {
+                if (removeNum < 100 || deltagare[removeNum-100] == null)
+                    System.out.println("No participant with number " + removeNum + " exists");
+                else {
+                    System.out.println(deltagare[removeNum-100] + " removed");
+                    deltagare[removeNum-100] = null;
+                    input.nextLine();
+                    break;
+                }
+            }
+            else {
+                System.out.println("No participant with number " + removeNum + " exists");
+            }
+        }
+    }
+    
+    private int checkParticipant(){
+    	int removeNum = input.nextInt();
+        if (removeNum-100 <= deltagare.length) {  
+            if (removeNum < 100 || deltagare[removeNum-100] == null)
+                System.out.println("No participant with number " + removeNum + " exists");
+        }
+        return removeNum;
+    }
